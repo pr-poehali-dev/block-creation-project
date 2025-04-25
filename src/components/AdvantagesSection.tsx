@@ -5,20 +5,18 @@ type AdvantageProps = {
   number: string;
   title: string;
   description: string;
-  className?: string;
 };
 
 const AdvantageCard: React.FC<AdvantageProps> = ({ 
   number, 
   title, 
-  description,
-  className = ""
+  description 
 }) => {
   return (
-    <div className={`rounded-3xl border border-gray-200 p-6 ${className}`}>
-      <div className="mb-2 text-lg font-semibold">{number}</div>
+    <div className="rounded-3xl border border-gray-200 p-6 h-full flex flex-col">
+      <div className="mb-2 text-lg font-medium">{number}</div>
       <h3 className="mb-4 text-xl font-bold text-blue-600">{title}</h3>
-      <p className="text-gray-700">{description}</p>
+      <p className="text-gray-700 text-sm">{description}</p>
     </div>
   );
 };
@@ -26,7 +24,7 @@ const AdvantageCard: React.FC<AdvantageProps> = ({
 const AdvantagesSection: React.FC = () => {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto">
-      <h2 className="text-3xl font-semibold text-center mb-10">НАШИ ПРЕИМУЩЕСТВА</h2>
+      <h2 className="text-3xl font-medium text-center mb-10">НАШИ ПРЕИМУЩЕСТВА</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <AdvantageCard 
